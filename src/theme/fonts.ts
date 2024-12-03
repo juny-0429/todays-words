@@ -40,3 +40,18 @@ export const pretendard = localFont({
     },
   ],
 });
+
+export const jalnan2 = localFont({
+  src: [
+    {
+      path: '../../public/fonts/Jalnan2.otf',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../../public/fonts/Jalnan2TTF.ttf',
+      weight: '700',
+      style: 'normal',
+    },
+  ],
+});
