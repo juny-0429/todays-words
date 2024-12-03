@@ -7,8 +7,7 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <style jsx global>{`
-        html,
-        body {
+        :root {
           font-family: ${pretendard.style.fontFamily};
         }
       `}</style>

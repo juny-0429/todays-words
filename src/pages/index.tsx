@@ -1,9 +1,10 @@
-import Header from 'src/components/header';
+import Header from 'src/features/header';
+import Layout from 'src/features/Layout';
 
 export default function Home() {
   return (
-    <div>
+    <Layout>
       <Header />
-    </div>
+    </Layout>
   );
 }
