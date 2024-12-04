@@ -3,6 +3,7 @@ import CrystalBallImg from '@/assets/images/crystal-ball.png';
 import Header from 'src/components/header';
 import Layout from 'src/components/Layout';
 import MessageBox from 'src/components/MessageBox';
+import LuckScore from 'src/components/LuckScore';
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
       <Header />
       <Image src={CrystalBallImg} alt="main image" width={200} height={200} />
       <MessageBox />
+      <LuckScore />
 
       <div className="flex flex-col justify-center items-center gap-3">
         {/* 행운 숫자 보기 */}
