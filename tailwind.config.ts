@@ -1,7 +1,7 @@
 import type { Config } from 'tailwindcss';
 
 export default {
-  content: ['./src/pages/**/*.{js,ts,jsx,tsx,mdx}', './src/components/**/*.{js,ts,jsx,tsx,mdx}', './src/app/**/*.{js,ts,jsx,tsx,mdx}'],
+  content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
   theme: {
     extend: {
       colors: {
@@ -10,6 +10,7 @@ export default {
         green: '#51807F',
         gray: '#808793',
         orange: '#E47E4A',
+        beige: '#F7EDD9',
         'mid-night-blue': '#1C2730',
       },
     },
