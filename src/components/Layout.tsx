@@ -12,7 +12,7 @@ export default function Layout({ children }: PropsWithChildren) {
       <Image src={SpringImg} alt="Bottom Right Corner" width={60} height={60} style={{ position: 'fixed', bottom: 5, right: 0 }} />
 
       {/* 콘텐츠 */}
-      <div className="flex flex-col items-center justify-center p-3">{children}</div>
+      <div className="flex flex-col justify-between items-center w-full h-full p-3">{children}</div>
     </div>
   );
 }
