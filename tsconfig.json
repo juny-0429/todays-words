@@ -17,7 +17,7 @@
       "src/*": ["./src/*"],
       "@/assets/*": ["./public/assets/*"]
     },
-    "downlevelIteration": true,
+    "downlevelIteration": true
   },
   "include": ["custom.d.ts", "next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules", "deprecated"]
