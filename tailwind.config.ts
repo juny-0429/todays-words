@@ -8,7 +8,7 @@ export default {
         background: '#E7D8C2',
         teal: '#175761',
         green: '#51807F',
-        gray: '#808793',
+        gray: '#9B9B9B',
         orange: '#E47E4A',
         beige: '#F7EDD9',
         'mid-night-blue': '#1C2730',
