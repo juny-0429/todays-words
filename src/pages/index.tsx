@@ -4,7 +4,7 @@ export default function Home() {
   const menuList = [
     { label: '오늘의 해답', link: '/page1' },
     { label: '점심 추천', link: '/roulette/lunch' },
-    { label: '행운 번호', link: '/page3' },
+    { label: '행운 번호', link: '/roulette/number' },
     { label: '하루 명언', link: '/page4' },
   ];
 
