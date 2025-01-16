@@ -1,11 +1,13 @@
 import Link from 'next/link';
+import Image from 'next/image';
+import BearImg from '@/assets/images/bear.png';
 
 export default function Home() {
   const menuList = [
-    { label: '오늘의 해답', link: '/page1' },
-    { label: '점심 추천', link: '/roulette/lunch' },
-    { label: '행운 번호', link: '/roulette/number' },
-    { label: '하루 명언', link: '/page4' },
+    { label: '오늘의 해답', logo: '', link: '/page1' },
+    { label: '점심 추천', logo: '', link: '/roulette/lunch' },
+    { label: '행운 번호', logo: BearImg, link: '/roulette/number' },
+    { label: '하루 명언', logo: '', link: '/page4' },
   ];
 
   return (
@@ -15,7 +17,9 @@ export default function Home() {
           {menuList.map((menu) => (
             <li key={menu.label}>
               <Link href={menu.link} className="flex flex-col justify-center items-center gap-4">
-                <div className="w-32 h-32 rounded-3xl bg-gray"></div>
+                <div className="flex justify-center items-center w-32 h-32 rounded-3xl bg-gray">
+                  <Image src={menu.logo} width={120} height={120} alt="bear image" />
+                </div>
                 <span className="text-light-black text-xl font-medium">{menu.label}</span>
               </Link>
             </li>

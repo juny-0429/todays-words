@@ -1,5 +1,8 @@
+import Image from 'next/image';
 import React, { useState } from 'react';
 import { useLottoData } from 'src/hook/lottoNumber';
+import BearImg from '@/assets/images/bear.png';
+import { jalnan2 } from 'src/theme/fonts';
 
 export default function Number() {
   const excludedNumbers = Array.from({ length: 45 }, (_, i) => i + 1);
@@ -56,7 +59,11 @@ export default function Number() {
 
   return (
     <main className="flex flex-col justify-between items-center p-2 bg-background w-full h-screen">
-      <h1>Lucky Number</h1>
+      <div className="flex justify-start items-center gap-1">
+        <h1 className={`flex items-center text-xl ${jalnan2.className}`}>
+          LUCKY <Image src={BearImg} width={50} height={50} alt="bear image" /> NUMBER
+        </h1>
+      </div>
 
       {/* 지난 회차 당첨 번호 */}
       <section>
@@ -81,7 +88,7 @@ export default function Number() {
       </section>
 
       {/* 랜덤 번호 추출 */}
-      <section className="flex flex-col items-center gap-3 p-1 bg-white outline outline-2 outline-light-black rounded-lg  w-80 h-24">
+      <section className="flex flex-col items-center gap-3 p-1 bg-white outline outline-2 outline-light-black rounded-lg  w-80 h-24 drop-shadow-md">
         <h2 className="text-lg text-mid-night-blue font-bold tracking-widest">랜덤 번호 추출</h2>
 
         <div className="flex justify-center items-center gap-3">
@@ -93,12 +100,12 @@ export default function Number() {
         </div>
       </section>
 
-      <section className="flex flex-col items-center gap-4 w-full">
+      <section className="flex flex-col items-center gap-2 w-full">
         <h2 className="text-xl text-deep-ember font-bold">제외할 숫자 선택</h2>
 
-        <div className="grid grid-cols-7 justify-items-center align-items-center gap-y-2 w-full">
+        <div className="grid grid-cols-7 justify-items-center align-items-center gap-3 w-fit">
           {excludedNumbers.map((number) => (
-            <button key={number} onClick={() => toggleNumber(number)} className={`w-10 h-10 rounded-full outline outline-2 font-bold ${selectedNumbers.includes(number) ? 'bg-red-500' : 'bg-deep-beige'}`}>
+            <button key={number} onClick={() => toggleNumber(number)} className={`w-8 h-8 rounded-full outline outline-2 font-bold ${selectedNumbers.includes(number) ? 'bg-red-500' : 'bg-deep-beige'}`}>
               {number}
             </button>
           ))}
