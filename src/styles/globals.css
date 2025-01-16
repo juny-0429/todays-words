@@ -6,3 +6,7 @@ svg,
 img {
   flex-shrink: 0;
 }
+
+.notebook-background {
+  background: repeating-linear-gradient(to bottom, #ffffff, #ffffff 28px, #d0c6ca 28px, #ffffff 30px);
+}
