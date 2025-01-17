@@ -27,6 +27,7 @@ export default {
         'deep-beige': '#C9BEAC',
         'light-brown': '#B49D82',
         'mid-night-blue': '#1C2730',
+        'peach-cream': '#FFC8A4',
         'gradient-1': '#E7D2CB',
         'gradient-2': '#B0D4CA',
       },

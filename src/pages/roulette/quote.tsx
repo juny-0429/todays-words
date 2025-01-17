@@ -42,10 +42,7 @@ export default function Quote({ initialQuote, quoteList }: Props) {
       </div>
 
       {currentQuote ? (
-        <div
-          key={fadeKey} // React가 이 요소를 다시 렌더링하도록 강제
-          className="flex flex-col gap-1 w-full h-64 px-4 py-8 bg-white rounded-md shadow-md "
-        >
+        <div key={fadeKey} className="flex flex-col gap-1 w-full h-64 px-4 py-8 bg-white rounded-md">
           <p className="text-lg text-mid-night-blue font-medium animate-fadeIn">{currentQuote.quote_en}</p>
           <p className="text-base font-light animate-fadeIn">{currentQuote.quote_ko}</p>
           <p className="pt-6 text-xs text-light-brown font-normal tracking-wider animate-fadeIn">{currentQuote.movie}</p>

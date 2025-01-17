@@ -7,7 +7,7 @@ import DailyQuoteImg from '@/assets/images/daily-quote.png';
 
 export default function Home() {
   const menuList = [
-    { label: '오늘의 해답', logo: AnswerImg, link: '/page1' },
+    { label: '오늘의 해답', logo: AnswerImg, link: 'roulette/answer' },
     { label: '점심 추천', logo: LunchImg, link: '/roulette/lunch' },
     { label: '행운 번호', logo: BearImg, link: '/roulette/number' },
     { label: '하루 명언', logo: DailyQuoteImg, link: '/roulette/quote' },
