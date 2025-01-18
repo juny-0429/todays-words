@@ -80,7 +80,7 @@ export default function Answer({ initialAnswers }: Props) {
               <li>
                 <h3 className="text-sm text-mid-night-blue font-bold pb-2">질문을 떠올리세요.</h3>
                 <p className="text-xs text-light-black font-light">
-                  ‘오늘의 해답’을 사용하기 전에 마음속으로 질문을 명확히 생각합니다. 질문은 한 번에 하나씩, 완전한 문장으로 구성하는 것이 좋습니다.
+                &quot;오늘의 해답&quot;을 사용하기 전에 마음속으로 질문을 명확히 생각합니다. 질문은 한 번에 하나씩, 완전한 문장으로 구성하는 것이 좋습니다.
                   <br />
                   <em>예: "이번에 취업이 잘 될까요?"</em>
                 </p>
@@ -109,7 +109,7 @@ export default function Answer({ initialAnswers }: Props) {
         </div>
       )}
 
-      <p className="text-xs text-deep-ember font-medium">“오늘의 해답”은 모든 답을 정답으로 제시하지 않습니다.</p>
+      <p className="text-xs text-deep-ember font-medium">&quot;오늘의 해답&quot;은 모든 답을 정답으로 제시하지 않습니다.</p>
     </main>
   );
 }

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 
 interface LottoData {
   totSellamnt: number; // 총 판매 금액
@@ -31,7 +31,7 @@ export const useLottoData = () => {
     }).format(date);
   };
 
-  const calculateLatestDrawInfo = () => {
+  const calculateLatestDrawInfo = useCallback(() => {
     const baseDate = new Date('2002-12-07');
     const today = new Date();
     const diffInMs = today.getTime() - baseDate.getTime();
@@ -42,7 +42,7 @@ export const useLottoData = () => {
 
     setLatestDrawNumber(drawNumber);
     setLatestDrawDate(formatDate(drawDate));
-  };
+  }, [formatDate]);
 
   const fetchLottoData = async (drawNumber: number) => {
     setIsLoading(true);
@@ -77,7 +77,7 @@ export const useLottoData = () => {
 
   useEffect(() => {
     calculateLatestDrawInfo();
-  }, []);
+  }, [calculateLatestDrawInfo]);
 
   useEffect(() => {
     if (latestDrawNumber > 0) {
