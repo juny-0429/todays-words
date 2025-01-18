@@ -82,7 +82,7 @@ export default function Answer({ initialAnswers }: Props) {
                 <p className="text-xs text-light-black font-light">
                 &quot;오늘의 해답&quot;을 사용하기 전에 마음속으로 질문을 명확히 생각합니다. 질문은 한 번에 하나씩, 완전한 문장으로 구성하는 것이 좋습니다.
                   <br />
-                  <em>예: "이번에 취업이 잘 될까요?"</em>
+                  <em>예: &apos;이번에 취업이 잘 될까요?&apos;</em>
                 </p>
               </li>
               <li>

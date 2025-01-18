@@ -22,14 +22,13 @@ export const useLottoData = () => {
   const [latestDrawNumber, setLatestDrawNumber] = useState<number>(0); // 최신 회차 번호
   const [latestDrawDate, setLatestDrawDate] = useState<string>(''); // 최신 회차 날짜 (포맷된 값)
 
-  // 날짜 포맷 함수 (0000년 00월 00일)
-  const formatDate = (date: Date): string => {
+  const formatDate = useCallback((date: Date): string => {
     return new Intl.DateTimeFormat('ko-KR', {
       year: 'numeric',
       month: 'long',
       day: 'numeric',
     }).format(date);
-  };
+  }, []);
 
   const calculateLatestDrawInfo = useCallback(() => {
     const baseDate = new Date('2002-12-07');
