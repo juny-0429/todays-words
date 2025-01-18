@@ -17,8 +17,8 @@
       "src/*": ["./src/*"],
       "@/assets/*": ["./public/assets/*"]
     },
-    "downlevelIteration": true,
+    "downlevelIteration": true
   },
-  "include": ["custom.d.ts", "next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["custom.d.ts", "next-env.d.ts", "**/*.ts", "**/*.tsx", "src/lib/supabaseClient.js", "src/pages/api/lunch.js"],
   "exclude": ["node_modules", "deprecated"]
 }

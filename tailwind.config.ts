@@ -1,16 +1,35 @@
-import type { Config } from "tailwindcss";
+import type { Config } from 'tailwindcss';
 
 export default {
-  content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
+  content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
   theme: {
     extend: {
+      keyframes: {
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+      },
+      animation: {
+        fadeIn: 'fadeIn 2s ease-in-out',
+      },
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        background: '#E3D9C6',
+        teal: '#175761',
+        'light-green': '#96AFA6',
+        green: '#51807F',
+        gray: '#F1F1F1',
+        'deep-gray': '#8F8F8F',
+        'light-black': '#474444',
+        orange: '#F1A066',
+        'deep-ember': '#E06D5D',
+        beige: '#FFF0DF',
+        'deep-beige': '#C9BEAC',
+        'light-brown': '#B49D82',
+        'mid-night-blue': '#1C2730',
+        'peach-cream': '#FFC8A4',
+        'gradient-1': '#E7D2CB',
+        'gradient-2': '#B0D4CA',
       },
     },
   },

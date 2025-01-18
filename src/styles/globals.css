@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+svg,
+img {
+  flex-shrink: 0;
+}
+
+.notebook-background {
+  background: repeating-linear-gradient(to bottom, #ffffff, #ffffff 20px, #e6e4e2 20px, #ffffff 22px);
+}
