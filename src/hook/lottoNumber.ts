@@ -31,12 +31,25 @@ export const useLottoData = () => {
   }, []);
 
   const calculateLatestDrawInfo = useCallback(() => {
-    const baseDate = new Date('2002-12-07');
+    const baseDate = new Date('2002-12-07'); // 첫 번째 로또 추첨일
     const today = new Date();
+
+    // 현재 요일과 시간 확인
+    const currentDay = today.getDay(); // 0: 일요일, 6: 토요일
+    const currentHour = today.getHours(); // 현재 시간 (24시간 기준)
+    const currentMinute = today.getMinutes(); // 현재 분
+
+    // 추첨 시간: 토요일 20:35
+    const isAfterDrawTime =
+      currentDay > 6 || // 일요일 이후
+      (currentDay === 6 && (currentHour > 20 || (currentHour === 20 && currentMinute >= 35))); // 토요일 20:35 이후
+
+    // 회차 계산
     const diffInMs = today.getTime() - baseDate.getTime();
     const diffInWeeks = Math.floor(diffInMs / (1000 * 60 * 60 * 24 * 7));
+    const drawNumber = diffInWeeks + (isAfterDrawTime ? 1 : 0); // 추첨 후라면 +1
 
-    const drawNumber = diffInWeeks + 1;
+    // 이번 주 추첨 날짜 계산
     const drawDate = new Date(baseDate.getTime() + diffInWeeks * (1000 * 60 * 60 * 24 * 7));
 
     setLatestDrawNumber(drawNumber);
