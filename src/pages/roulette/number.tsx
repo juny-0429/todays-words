@@ -68,8 +68,8 @@ export default function Number() {
       {/* 지난 회차 당첨 번호 */}
       <section>
         <div className="flex flex-col items-center">
-          <h2 className="text-base text-mid-night-blue font-bold tracking-widest">{lottoInfo.latestDrawNumber} 회차 당첨 번호</h2>
-          <time className="text-xs text-deep-gray font-normal tracking-widest">({lottoInfo.latestDrawDate} 추첨)</time>
+          <h2 className="text-base text-mid-night-blue font-bold tracking-widest">{lottoInfo.drawNumber} 회차 당첨 번호</h2>
+          <time className="text-xs text-deep-gray font-normal tracking-widest">({lottoInfo.data?.drwNoDate} 추첨)</time>
         </div>
 
         <div className="flex justify-center items-center gap-2">
