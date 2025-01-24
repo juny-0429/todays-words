@@ -19,6 +19,7 @@ export const useLottoData = () => {
   const [data, setData] = useState<LottoData | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
+  const [drawNumber, setDrawNumber] = useState<number>(0); // 현재 회차 번호
 
   const formatDate = useCallback((dateString: string): string => {
     const date = new Date(dateString);
@@ -31,13 +32,13 @@ export const useLottoData = () => {
 
   const calculateLatestDrawNumber = useCallback((): number => {
     const baseDate = new Date('2002-12-07'); // 첫 번째 로또 추첨일
-    const today = new Date(); // 현재 날짜
+    const today = new Date();
     today.setHours(0, 0, 0, 0); // 시간 제거
 
     const diffInDays = Math.floor((today.getTime() - baseDate.getTime()) / (1000 * 60 * 60 * 24));
     const diffInWeeks = Math.floor(diffInDays / 7); // 기준일로부터 경과한 주(회차)
 
-    const currentSaturday = new Date(baseDate.getTime() + diffInWeeks * 7 * 24 * 60 * 60 * 1000); // 이번 주 토요일 계산
+    const currentSaturday = new Date(baseDate.getTime() + diffInWeeks * 7 * 24 * 60 * 60 * 1000);
     currentSaturday.setHours(0, 0, 0, 0); // 시간 제거
 
     const isSundayOrLater = today > currentSaturday; // 오늘이 이번 주 토요일 이후인지 확인
@@ -79,11 +80,12 @@ export const useLottoData = () => {
   );
 
   useEffect(() => {
-    const drawNumber = calculateLatestDrawNumber();
-    fetchLottoData(drawNumber); // 페이지 진입 시 한 번 요청
+    const latestDrawNumber = calculateLatestDrawNumber();
+    setDrawNumber(latestDrawNumber); // 회차 정보 상태 업데이트
+    fetchLottoData(latestDrawNumber); // 페이지 진입 시 한 번 요청
   }, [calculateLatestDrawNumber, fetchLottoData]);
 
   const lottoNumbers = data ? [data.drwtNo1, data.drwtNo2, data.drwtNo3, data.drwtNo4, data.drwtNo5, data.drwtNo6] : [];
 
-  return { data, isLoading, error, lottoNumbers };
+  return { data, isLoading, error, lottoNumbers, drawNumber }; // drawNumber 포함
 };
